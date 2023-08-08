@@ -2,10 +2,7 @@ import streamlit as st
 from datetime import timedelta
 import plotly.express as px
 from data import *
-
-
-
-
+#______________________________SETTING UP THE DATA
 
 st.set_page_config(
     page_title="Dashboard",
