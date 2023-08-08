@@ -4,3 +4,4 @@ pandas
 timedelta
 datetime
 mysql-connector-python
+plotly
