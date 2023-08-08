@@ -1,7 +1,7 @@
 streamlit
 mysql.connector
 pandas
-timedelta
 datetime
+timedelta
 mysql-connector-python
 plotly
