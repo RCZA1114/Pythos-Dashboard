@@ -3,3 +3,4 @@ mysql.connector
 pandas
 timedelta
 datetime
+mysql-connector-python
