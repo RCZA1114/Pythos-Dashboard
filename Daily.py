@@ -76,4 +76,4 @@ fifteen = current_datetime - timedelta(minutes=15)
 filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
 
 
-st.datafram(filtered_data)
+st.dataframe(filtered_data)
