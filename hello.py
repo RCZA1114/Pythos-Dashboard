@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.write("BARBIE IS THE BEST MOVIE EVER")
+st.write("THE RING IS MINE!!!!!!!!!!!!")
