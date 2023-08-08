@@ -1,3 +1,5 @@
+
+import streamlit as st
 import mysql.connector
 import pandas as pd
 #from streamlit_autorefresh import st_autorefresh
@@ -23,6 +25,7 @@ df = pd.DataFrame(sql_query, columns=['tower_id', 'pm2_5', 'humidity', 'temp', '
 
 #df = pd.DataFrame(sql_query, columns=['last_update'])
 
-print(df)
+st.markdown("### Detailed Data View")
+st.dataframe(df)
 
 #st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
