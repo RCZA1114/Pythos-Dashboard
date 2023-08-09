@@ -73,7 +73,7 @@ start_datetime = current_datetime - timedelta(hours=16)  # - 24 hours
 
 
 
-filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
+filtered_data = data[(data['Date/Time'] >= start_datetime)]
 
 
 st.dataframe(filtered_data)
