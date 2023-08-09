@@ -58,8 +58,8 @@ data = load_data()
 
 st.dataframe(data)
 
-date = date.today()
-time = time.today()
+date = st.date_input(value=date.today())
+time = st.time_input(value=time.today())
 
 
 # Filter data
