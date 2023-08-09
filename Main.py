@@ -46,12 +46,12 @@ data = load_data()
 date = st.date_input('Input Date')
 time = st.time_input('Input Time')
 
-time = time + timedelta(hours=8)
+
 # Filter data
 datetime_str = str(date) + ' ' + str(time)
 current_datetime = pd.to_datetime(datetime_str)
 
-
+current_datetime = current_datetime + timedelta(hours=8)
 start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
 
 
