@@ -58,8 +58,8 @@ data = load_data()
 
 st.dataframe(data)
 
-date = st.date_input('Input Date', value=date.today())
-time = st.time_input('Input Time', value=time.today())
+date = st.date_input('Input Date')
+time = st.time_input('Input Time')
 
 
 # Filter data
@@ -67,10 +67,10 @@ datetime_str = str(date) + ' ' + str(time)
 current_datetime = pd.to_datetime(datetime_str)
 
 
-start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
+start_datetime = current_datetime - timedelta(hours=16)  # - 24 hours
 
 
-fifteen = current_datetime - timedelta(minutes=15)
+
 
 
 filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
