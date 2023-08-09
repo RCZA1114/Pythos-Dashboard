@@ -4,7 +4,10 @@ import datetime
 import plotly.express as px
 from datetime import timedelta
 
-
+def start(year, month, day):
+    if "start" not in st.session_state:
+        # set the initial default value of the slider widget
+        st.session_state.start = datetime.date(year, month, day)
 st.header("Data for the Week")
 
 st.sidebar.success("Select a page above.")
