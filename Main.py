@@ -55,7 +55,7 @@ current_datetime = pd.to_datetime(datetime_str)
 start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
 
 
-fifteen = current_datetime - timedelta(minutes=15)
+fifteen = current_datetime - timedelta(minutes=45)
 
 
 filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
@@ -97,7 +97,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 filtered_data_2 = filtered_data_2[filtered_data_2['Tower ID'].isin(selected_towers)]
-fig2 = px.bar(filtered_data_2, x='Date/Time', y=selected_measurement, title="Bar Chart of the measurement for the last 15 minutes", color='Tower ID')
+fig2 = px.bar(filtered_data_2, x='Date/Time', y=selected_measurement, title="Bar Chart of the measurement for the last 45 minutes", color='Tower ID')
 
 
 #fig3 = px.line(fifteen_min, x='datetime', y=selected_measurement, title="Title", color='tower_id')
