@@ -1,7 +1,7 @@
 import mysql.connector
 import pandas as pd
 import streamlit as st
-from datetime import timedelta, date
+from datetime import timedelta, date, time
 import plotly.express as px
 #from streamlit_autorefresh import st_autorefresh
 
@@ -58,8 +58,8 @@ data = load_data()
 
 st.dataframe(data)
 
-date = st.date_input('Input Date')
-time = st.time_input('Input Time')
+date = date.today()
+time = time.today()
 
 
 # Filter data
@@ -73,7 +73,7 @@ start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
 fifteen = current_datetime - timedelta(minutes=15)
 
 
-filtered_data = data[(data['Date/Time'] >= start_datetime)]
+filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
 
 
 st.dataframe(filtered_data)
