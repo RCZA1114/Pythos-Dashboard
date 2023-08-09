@@ -1,7 +1,7 @@
 import mysql.connector
 import pandas as pd
 import streamlit as st
-from datetime import timedelta
+from datetime import timedelta, date
 import plotly.express as px
 #from streamlit_autorefresh import st_autorefresh
 
