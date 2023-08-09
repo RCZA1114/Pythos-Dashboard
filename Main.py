@@ -5,12 +5,12 @@ from data import *
 #______________________________SETTING UP THE DATA
 
 st.set_page_config(
-    page_title="Dashboard",
+    page_title="Pythos Dashboard",
     page_icon="👋",
 )
 
 
-st.title("Dashboard")
+st.title("Pythos Dashboard")
 
 
 st.sidebar.success("Select a page above.")
