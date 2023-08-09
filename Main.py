@@ -46,7 +46,7 @@ data = load_data()
 date = st.date_input('Input Date')
 time = st.time_input('Input Time')
 
-
+time = time + timedelta(hours=8)
 # Filter data
 datetime_str = str(date) + ' ' + str(time)
 current_datetime = pd.to_datetime(datetime_str)
