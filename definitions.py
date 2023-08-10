@@ -1,0 +1,9 @@
+
+
+definitions = {
+  "PM2.5": "THIS IS PM2.5",
+  "VOC": "THIS IS VOC",
+  "TEMPERATURE": "THIS IS TEMPERATURE",
+  "HUMIDITY": "THIS IS HUMIDITY",
+  "PRESSURE": "THIS IS PRESSURE",
+}
