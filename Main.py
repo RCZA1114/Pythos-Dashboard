@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import timedelta
 import plotly.express as px
 from data import *
+from definitions import definitions
 #______________________________SETTING UP THE DATA
 
 st.set_page_config(
@@ -69,7 +70,10 @@ filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= cu
 
 
 selected_measurement = st.selectbox('Select Measurement', ('PM2.5', 'Humidity', 'Temperature', 'VOC', 'Pressure'))
-st.info("PM2.5 - ")
+st.info("")
+for d in definitions:
+    if selected_measurement==d:
+        st.info(definitions[d])
 
 tower_ids = data['Tower ID'].unique()
 
