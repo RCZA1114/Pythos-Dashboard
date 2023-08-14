@@ -4,7 +4,7 @@ selected_measurement = st.selectbox('Select Measurement', ('PM2.5', 'Humidity', 
 
 for d in definitions:
 
-x = selected_measurement
+  x = selected_measurement
   if d == x:
 
     st.write(f"This is {definitions[d]}")
