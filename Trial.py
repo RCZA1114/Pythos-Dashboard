@@ -7,4 +7,4 @@ for d in definitions:
   x = selected_measurement
   if d == x:
 
-    st.write(f"This is {definitions[d]}")
+    st.write(definitions[d])
