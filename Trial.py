@@ -5,6 +5,6 @@ selected_measurement = st.selectbox('Select Measurement', ('PM2.5', 'Humidity', 
 
 
 for d in dictionaries:
-  if d == selected_measurement
+  if d == selected_measurement:
 
-  st.write(f"This is {selected_measurement[d]}")
+    st.write(f"This is {selected_measurement[d]}")
