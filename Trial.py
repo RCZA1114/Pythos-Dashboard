@@ -64,7 +64,4 @@ filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= cu
 
 st.dataframe(filtered_data)
 
-while True:
-     # update every 5 mins
-     st.dataframe(load_data())
-     time.sleep(300)  
+st.button("Refresh Data", on_click=load_data())
