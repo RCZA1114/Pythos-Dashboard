@@ -20,7 +20,7 @@ st.sidebar.success("Select a page above.")
 
 st.header("Data for the Day!!!!")
 
-if st.button("Refresh Data")
+if st.button("Refresh Data"):
     @st.cache_data
     def load_data():
         #data = pd.read_csv("2023.csv", usecols=['tower_id', 'pm2_5', 'humidity', 'temp', 'voc', 'pressure', 'date', 'time'])
