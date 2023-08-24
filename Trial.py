@@ -41,27 +41,28 @@ def load_data():
 
     return data
 
+if st.button("Refresh Data"):
+    data = load_data()
     
-data = load_data()
+    
+    date = st.date_input('Input Date')
+    time = st.time_input('Input Time')
+    
+    
+    # Filter data
+    datetime_str = str(date) + ' ' + str(time)
+    current_datetime = pd.to_datetime(datetime_str)
+    
+    current_datetime = current_datetime + timedelta(hours=8)
+    start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
+    
+    fifteen = current_datetime - timedelta(minutes=45)
+    
+    filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
+    
+    filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= current_datetime)]
+    
+    st.dataframe(filtered_data)
 
 
-date = st.date_input('Input Date')
-time = st.time_input('Input Time')
-
-
-# Filter data
-datetime_str = str(date) + ' ' + str(time)
-current_datetime = pd.to_datetime(datetime_str)
-
-current_datetime = current_datetime + timedelta(hours=8)
-start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
-
-fifteen = current_datetime - timedelta(minutes=45)
-
-filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
-
-filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= current_datetime)]
-
-st.dataframe(filtered_data)
-
-st.button("Refresh Data", on_click=load_data())
+    
