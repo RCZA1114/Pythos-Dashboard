@@ -3,7 +3,7 @@ from datetime import timedelta
 import plotly.express as px
 from data import *
 from definitions import definitions
-import time
+
 #______________________________SETTING UP THE DATA
 
 st.set_page_config(
