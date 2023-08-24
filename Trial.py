@@ -3,6 +3,7 @@ from datetime import timedelta
 import plotly.express as px
 from data import *
 from definitions import definitions
+import time
 #______________________________SETTING UP THE DATA
 
 st.set_page_config(
@@ -62,3 +63,8 @@ filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] 
 filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= current_datetime)]
 
 st.dataframe(filtered_data)
+
+while True:
+     # update every 5 mins
+     st.dataframe(load_data())
+     time.sleep(300)  
