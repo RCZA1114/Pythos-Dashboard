@@ -48,4 +48,6 @@ def get_data():
 
     
 
-    #st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
+
+data = load_data()
+st.datafram(data)
