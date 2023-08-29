@@ -2,7 +2,7 @@ streamlit
 mysql.connector
 pandas
 threading
-thread
+Thread
 datetime
 timedelta
 mysql-connector-python
