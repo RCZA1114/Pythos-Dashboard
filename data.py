@@ -1,8 +1,10 @@
 
 import mysql.connector
 import pandas as pd
+import threading as thread
 ## import threading
 import streamlit as st
+from streamlit.script_run_context import add_script_run_ctx
 #from streamlit_autorefresh import st_autorefresh
 
 
@@ -37,12 +39,13 @@ def get_data():
     data = data.replace({'Tower ID': {'T0703220001': 'Tower 1', 'T0703220002': 'Tower 2', 'T0703220005': 'Tower 5',
                                       'T0703220006': 'Tower 6', 'T0703220008': 'Tower 8', 'T0703220009': 'Tower 9'}})
 
-
+    p = thread.Thread(target=data)
+    add_script_run_ctx(p)
 
 
     ##p = threading.Timer(300, get_data)
 
-    ##p.start()
+    p.start()
 
 
     return data
