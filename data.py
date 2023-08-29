@@ -44,8 +44,6 @@ def get_data():
 
     p = Threading.Timer(180, get_data)
 
-    add_script_run_ctx(p)
-
     p.start()
 
 
