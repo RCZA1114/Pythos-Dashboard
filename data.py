@@ -2,6 +2,7 @@
 import mysql.connector
 import pandas as pd
 import threading
+import streamlit as st
 #from streamlit_autorefresh import st_autorefresh
 
 
@@ -50,4 +51,4 @@ def get_data():
 
 
 data = load_data()
-st.datafram(data)
+st.dataframe(data)
