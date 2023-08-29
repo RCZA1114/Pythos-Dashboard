@@ -42,7 +42,7 @@ def get_data():
 
 
 
-    p = Threading.Timer(180, get_data)
+    p = Thread.Timer(180, get_data)
 
     p.start()
 
