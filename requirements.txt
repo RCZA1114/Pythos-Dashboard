@@ -1,6 +1,4 @@
 streamlit
-streamlit.runtime.scriptrunner
-add_script_run_ctx
 mysql.connector
 pandas
 threading
