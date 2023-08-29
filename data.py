@@ -1,8 +1,10 @@
 
 import mysql.connector
 import pandas as pd
-import threading
+from threading import Thread
 import streamlit as st
+from streamlit.runtime.scriptrunner import add_script_run_ctx
+
 #from streamlit_autorefresh import st_autorefresh
 
 
@@ -40,7 +42,9 @@ def get_data():
 
 
 
-    p = threading.Timer(180, get_data)
+    p = Threading.Timer(180, get_data)
+
+    add_script_run_ctx(p)
 
     p.start()
 
