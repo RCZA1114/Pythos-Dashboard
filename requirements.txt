@@ -6,6 +6,5 @@ timedelta
 mysql-connector-python
 plotly
 param
-add_script_run_ctx
 threading
 
