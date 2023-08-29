@@ -1,7 +1,7 @@
 
 import mysql.connector
 import pandas as pd
-import threading
+import _threading
 import streamlit as st
 #from streamlit_autorefresh import st_autorefresh
 
