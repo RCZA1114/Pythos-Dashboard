@@ -1,7 +1,9 @@
 streamlit
+streamlit.runtime.scriptrunner
 mysql.connector
 pandas
 threading
+thread
 datetime
 timedelta
 mysql-connector-python
