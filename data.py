@@ -3,7 +3,7 @@ import mysql.connector
 import pandas as pd
 from threading import Thread
 import streamlit as st
-from streamlit.runtime.scriptrunner import add_script_run_ctx
+
 
 #from streamlit_autorefresh import st_autorefresh
 
