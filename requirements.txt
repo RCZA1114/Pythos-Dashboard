@@ -1,7 +1,6 @@
 streamlit
 mysql.connector
 pandas
-threading
 Thread
 datetime
 timedelta
