@@ -4,7 +4,7 @@ import pandas as pd
 import threading
 ## import threading
 import streamlit as st
-from streamlit.ReportThread import add_report_ctx
+## from streamlit.ReportThread import add_report_ctx
 #from streamlit_autorefresh import st_autorefresh
 
 
@@ -43,7 +43,7 @@ def get_data():
 
 
     p = threading.Timer(300, get_data)
-    add_report_ctx(p)
+    ## add_report_ctx(p)
     p.start()
 
 
