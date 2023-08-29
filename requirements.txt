@@ -1,9 +1,10 @@
 streamlit
 mysql.connector
 pandas
+threading
 datetime
 timedelta
 mysql-connector-python
 plotly
 param
-threading
+
