@@ -34,7 +34,7 @@ time = st.time_input('Input Time (Time is based on Greenwich Meridian Time as th
 
 # Filter data
 datetime_str = str(date) + ' ' + str(time)
-current_datetime = pd.to_datetime(datetime_str)
+current_datetime = pd.to_datetime(datetime_str) + timedelta(hours=8)
 
 
 start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
