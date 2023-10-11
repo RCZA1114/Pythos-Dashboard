@@ -8,7 +8,7 @@ from streamlit_autorefresh import st_autorefresh
 #______________________________SETTING UP THE DATA
 
 
-st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
+
 st.set_page_config(
     page_title="Dashboard",
     page_icon="👋",
@@ -19,7 +19,7 @@ st.title("Dashboard")
 
 
 st.sidebar.success("Select a page above.")
-
+st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
 
 st.header("Data for the Day!!!!")
 @st.cache_data
