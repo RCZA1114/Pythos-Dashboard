@@ -1,65 +1,56 @@
-import mysql.connector
-import pandas as pd
-import threading
-import time
 import streamlit as st
 from datetime import timedelta
 import plotly.express as px
-#from streamlit_autorefresh import st_autorefresh
+from data import *
+from definitions import *
+#from read_csv import read_data
+#______________________________SETTING UP THE DATA
+
+st.set_page_config(
+    page_title="Dashboard",
+    page_icon="👋",
+)
 
 
-def get_data():
-    mydb = mysql.connector.connect(    #GEt The Data from the Database
-        host="115.147.39.104",
-
-        user="aptadmin",
-        passwd="Pe*UyxpBZ_C0VL2c",
-        database="airlock",
-        port=5061,
-    )
-    #3query = "select *, DATE(last_update) as date, TIME(last_update) as time, HOUR(last_update) as hour, MINUTE(last_update) as minute, SECOND(last_update) as second, MONTH(last_update) AS month, DAY(last_update) as day, YEAR(last_update) as year from failures where last_update > '2023-01-01'"
-    sql_query = pd.read_sql(
-        "select *, DATE(last_update) as date, TIME(last_update) as time, HOUR(last_update) as hour, MINUTE(last_update) as minute, SECOND(last_update) as second, MONTH(last_update) AS month, DAY(last_update) as day, YEAR(last_update) as year from failures where last_update > '2023-01-01'",
-        mydb
-    )
-    #sql_query = pd.read_sql("select * from failures", mydb)
-
-    data = pd.DataFrame(sql_query, columns=['tower_id', 'pm2_5', 'humidity', 'temp', 'voc', 'pressure','last_update'])
+st.title("Dashboard")
 
 
-    data['last_update'] = pd.to_datetime(data['last_update'])
+st.sidebar.success("Select a page above.")
 
 
-    data.rename(
-        columns={"tower_id": "Tower ID", "pm2_5": "PM2.5", "voc": "VOC", "humidity": "Humidity", "temp": "Temperature", "pressure": "Pressure", "last_update": "Date/Time"},
-        inplace=True,
-    )   #Update the Names
+st.header("Data for the Day!!!!")
+@st.cache_data
+def load_data():
+   #data = pd.read_csv("2023.csv")
+   data = get_data()
+
+   return data
+
+data = load_data()
+
+data['Date/Time'] = pd.to_datetime(data['Date/Time'])
+date = st.date_input('Input Date')
+time = st.time_input('Input Time (Time is based on Greenwich Meridian Time as that is the default of Streamlit)')
 
 
-    data = data.replace({'Tower ID': {'T0703220001': 'Tower 1', 'T0703220002': 'Tower 2', 'T0703220005': 'Tower 5',
-                                      'T0703220006': 'Tower 6', 'T0703220008': 'Tower 8', 'T0703220009': 'Tower 9'}})
+# Filter data
+datetime_str = str(date) + ' ' + str(time)
+current_datetime = pd.to_datetime(datetime_str) 
+
+current_datetime = current_datetime  + timedelta(hours=8)
 
 
-
-    p = threading.Timer(300, get_data)
-
-    p.start()    #Timer to Update the Data
+start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
 
 
-    return data
-
-    
-
-    #st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
+fifteen = current_datetime - timedelta(minutes=15)
 
 
+filtered_data = data[(data['Date/Time'] >= start_datetime) & (data['Date/Time'] <= current_datetime)]
 
-data = get_data()
 
+filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= current_datetime)]
 
-filtered_data = data.set_index('Date/Time').last('24h').reset_index()[data.columns]
-
-filtered_data_2 = data.set_index('Date/Time').last('1h').reset_index()[data.columns]
 
 
 
