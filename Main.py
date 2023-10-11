@@ -59,7 +59,7 @@ filtered_data_2 = data[(data['Date/Time'] >= fifteen) & (data['Date/Time'] <= cu
 selected_measurement = st.selectbox('Select Measurement', ('PM2.5', 'Humidity', 'Temperature', 'VOC', 'Pressure'))
 for d in definitions:
     if selected_measurement == d:
-        st.text_input(definitions[d])
+        st.text_area(definitions[d])
 
 tower_ids = data['Tower ID'].unique()
 
