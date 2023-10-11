@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import timedelta
 import plotly.express as px
 from data import *
+from definitions import *
 #from read_csv import read_data
 #______________________________SETTING UP THE DATA
 
