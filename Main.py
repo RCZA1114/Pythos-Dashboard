@@ -91,7 +91,7 @@ fig2 = px.bar(filtered_data_2, x='Date/Time', y=selected_measurement, title="Bar
 #fig3 = px.line(fifteen_min, x='datetime', y=selected_measurement, title="Title", color='tower_id')
 
 
-st.plotly_chart(fig2, use_container_width=True)
+#st.plotly_chart(fig2, use_container_width=True)
 #st.plotly_chart(fig3, use_container_width=True)
 
 
