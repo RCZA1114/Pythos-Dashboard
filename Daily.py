@@ -29,7 +29,7 @@ data = load_data()
 
 data['Date/Time'] = pd.to_datetime(data['Date/Time'])
 date = st.date_input('Input Date')
-time = st.time_input('Input Time')
+time = st.time_input('Input Time (Time is based on Greenwich Meridian Time as that is the default of Streamlit)')
 
 
 # Filter data
