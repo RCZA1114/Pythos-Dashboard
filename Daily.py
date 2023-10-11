@@ -3,7 +3,7 @@ from datetime import timedelta
 import plotly.express as px
 from data import *
 from definitions import *
-from streamlit_autorefresh import st_autorefresh
+
 #from read_csv import read_data
 #______________________________SETTING UP THE DATA
 
