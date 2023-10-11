@@ -50,7 +50,7 @@ def get_data():
     return data
 
 data = get_data()
-st.dataframe(data)
+#st.dataframe(data)
 
     
 
