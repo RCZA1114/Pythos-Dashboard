@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import timedelta
 import plotly.express as px
 from data import *
+from definitions import *
 #from read_csv import read_data
 #______________________________SETTING UP THE DATA
 
@@ -34,7 +35,9 @@ time = st.time_input('Input Time (Time is based on Greenwich Meridian Time as th
 
 # Filter data
 datetime_str = str(date) + ' ' + str(time)
-current_datetime = pd.to_datetime(datetime_str)
+current_datetime = pd.to_datetime(datetime_str) 
+
+current_datetime = current_datetime  + timedelta(hours=8)
 
 
 start_datetime = current_datetime - timedelta(hours=24)  # - 24 hours
