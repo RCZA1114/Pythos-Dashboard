@@ -3,9 +3,12 @@ from datetime import timedelta
 import plotly.express as px
 from data import *
 from definitions import *
+from streamlit_autorefresh import st_autorefresh
 #from read_csv import read_data
 #______________________________SETTING UP THE DATA
 
+
+st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
 st.set_page_config(
     page_title="Dashboard",
     page_icon="👋",
