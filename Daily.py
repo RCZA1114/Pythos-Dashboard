@@ -19,7 +19,7 @@ st.title("Dashboard")
 
 
 st.sidebar.success("Select a page above.")
-st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
+## st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
 
 st.header("Data for the Day!!!!")
 @st.cache_data
