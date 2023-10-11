@@ -24,8 +24,8 @@ st_autorefresh(interval=5 * 60 * 1000, key="dataframerefresh")
 st.header("Data for the Day!!!!")
 @st.cache_data
 def load_data():
-   #data = pd.read_csv("2023.csv")
-   data = get_data()
+   data = pd.read_csv("2023.csv")
+   #data = get_data()
 
    return data
 
